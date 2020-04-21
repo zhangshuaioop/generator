@@ -5,14 +5,20 @@
 <generatorConfiguration>
     <context id="MySQL2Tables" targetRuntime="MyBatis3"
              defaultModelType="flat">
-        <commentGenerator>
-            <property name="suppressDate" value="true" />
-            <property name="suppressAllComments" value="true" />
-        </commentGenerator>
+
+        <!-- 防止生成的代码中有很多注释，加入下面的配置控制 -->
+        <commentGenerator >
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressDate" value="true"/>
+<!--            <property name="suppressAllComments" value="true" />-->
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator >
+
+
         <!--数据库链接地址账号密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://rm-k5qcpzc24x9e2fo953o.mysql.rds.aliyuncs.com/core_center_test"
-                        userId="db_user" password="Teekee123">
+                        connectionURL="jdbc:mysql://10.0.3.200:3306/atzuchedb"
+                        userId="autoDev" password="auto2015">
         </jdbcConnection>
 
         <!-- true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型 -->
@@ -41,6 +47,6 @@
 
 
         <!--生成对应表及类名-->
-        <table tableName="fdp_order_customize_label" domainObjectName="FdpOrderCustomizeLabel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="pop_config" domainObjectName="PopConfig" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>
